@@ -32,21 +32,20 @@ var dateSuffix_rd = [3,23]
 // create time h1 and date h2
 var timeElement = document.createElement('h1');
 timeElement.id = 'clock';
-var dateElement = document.createElement('h2');
+var dateElement = document.createElement('h1');
 dateElement.id = 'date';
-var ampmElement = document.createElement('h1');
-ampmElement.id = 'am-pm';
+
 // Want: DayOfWeek, Month Day Year
 
 // Start the clock
 function startClock(){
-    setInterval(updateClock, 1000); // call every seconds
+    setInterval(updateClock, 1000); // call updateClock every seconds
 }
 
 // Update time every second
 function updateClock(){
     
-    console.log("working!");
+    console.log("Ticking!");
 
     // Create new date object each time 
     var theDate = new Date();
@@ -59,20 +58,10 @@ function updateClock(){
     var seconds = theDate.getSeconds();
     var am_pm = '';
 
-    hours = hours < 10 ? '0' +  hours : hours;        // if hours<10 append 0, otherwise just set to getHours()
-    minutes = minutes < 10 ? '0' +  minutes : minutes;    // if mins<10 append 0, otherwise just set to getMinutes()
-    seconds = seconds < 10 ? '0' + seconds : seconds; // if seconds<10 append 0, otherwise just set to getSeconds()
-    am_pm = hours < 12 ? am_pm = 'AM' : am_pm = 'PM';
-
-    // Handle AM/PM readable 
-    // if (hours < 12){
-    //     // display AM in new div next to seconds
-    //     am_pm = 'AM';
-    // } else {
-    //     // display PM in new div next to seconds
-    //     am_pm = 'PM';
-    // }
-
+    hours = hours < 10 ? '0' +  hours : hours;         // if hours<10 append 0, otherwise just set to getHours() 
+    minutes = minutes < 10 ? '0' +  minutes : minutes; // if mins<10 append 0, otherwise just set to getMinutes()
+    seconds = seconds < 10 ? '0' + seconds : seconds;  // if seconds<10 append 0, otherwise just set to getSeconds()
+    am_pm = hours < 12 ? am_pm = 'AM' : am_pm = 'PM';  // toggle AM/PM based on hours
 
     // ------ DATE Structure ------ 
     var dayOfWeek = weekdays[theDate.getDay()]; // Mon, Tues, Wed, etc.
@@ -95,22 +84,17 @@ function updateClock(){
     // Reference to clock and date divs
     var clock = document.querySelector('#clock-container');
     var date = document.querySelector('#date-container');
-    var ampm = document.querySelector('#am-pm-container');
     
     // Set time text
-    timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+    timeElement.textContent = `${hours}:${minutes}:${seconds} ${am_pm}`;
 
     // Set date text
     dateElement.textContent = `${dayOfWeek}, ${month} ${day} ${year}`;
 
-    // Set AM PM
-    ampmElement.textContent = `${am_pm}`;
-
     // Append updated timeElement & dateElement to clock and date divs
     clock.appendChild(timeElement);
     date.appendChild(dateElement);
-    ampm.appendChild(ampmElement);
 }
 
-// Call Clock function
+// Start the Clock
 startClock();

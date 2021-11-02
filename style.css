@@ -1,26 +1,29 @@
-#clock-container {
-  width: 100%;
-  background-color: aqua;
-}
-
-#clock {
+body {
+  background-color: rgb(46, 46, 46);
   text-align: center;
-  width: inherit;
-}
-
-#date-container {
+  font-family: monospace;
   width: 100%;
-}
-
-#date {
-  width: inherit;
 }
 
 .container {
-  text-align: center;
-  background-color: blue;
+  padding: 150px 0px 150px 0px;
 }
 
 #title {
-  color: blueviolet;
+  color: rgb(20, 20, 20);
+  text-align: center;
+  font-size: 80pt;
+  margin-bottom: 20px;
+}
+
+#clock {
+  color: rgb(88, 88, 88);
+  text-align: center;
+  font-size: 75pt;
+  margin-bottom: 50px;
+}
+
+#date {
+  font-size: 38pt;
+  color: rgb(133, 133, 133);
 }
