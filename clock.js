@@ -23,11 +23,18 @@ months[9] = "October";
 months[10] = "November";
 months[11] = "December";
 
+// Date suffix values -- do not need one for "th"; this would be the longest array anyways!
+var dateSuffix_st = [1,21,31]
+var dateSuffix_nd = [2,22]
+var dateSuffix_rd = [3,23]
+
+
 // create time h1 and date h2
 var timeElement = document.createElement('h1');
 var dateElement = document.createElement('h2');
+var ampmElement = document.createElement('h1');
 
-// Want: Friday, August 31st 2021
+// Want: DayOfWeek, Month Day Year
 
 // Start the clock
 function startClock(){
@@ -40,33 +47,67 @@ function updateClock(){
     console.log("working!");
 
     // Create new date object each time 
-    let theDate = new Date();
+    var theDate = new Date();
     
+
+    //  ------ TIME Structure ------ 
     // grab current time properties for new date obj
     var hours = theDate.getHours();
     var minutes = theDate.getMinutes();
     var seconds = theDate.getSeconds();
-    
+    var am_pm = '';
+
+    hours = hours < 10 ? '0' +  hours : hours;        // if hours<10 append 0, otherwise just set to getHours()
+    minutes = minutes < 10 ? '0' +  minutes : minutes;    // if mins<10 append 0, otherwise just set to getMinutes()
+    seconds = seconds < 10 ? '0' + seconds : seconds; // if seconds<10 append 0, otherwise just set to getSeconds()
+    am_pm = hours < 12 ? am_pm = 'AM' : am_pm = 'PM';
+
+    // Handle AM/PM readable 
+    // if (hours < 12){
+    //     // display AM in new div next to seconds
+    //     am_pm = 'AM';
+    // } else {
+    //     // display PM in new div next to seconds
+    //     am_pm = 'PM';
+    // }
+
+
+    // ------ DATE Structure ------ 
     var dayOfWeek = weekdays[theDate.getDay()]; // Mon, Tues, Wed, etc.
     var month = months[theDate.getMonth()]; // Jan, Feb, March, etc.
     var day = theDate.getDate(); // 21st, 22nd, 23rd etc.
     var year = theDate.getFullYear();
 
+    // Handle day suffix
+    if (dateSuffix_nd.includes(day)){
+        day = day + 'nd';
+    } else if (dateSuffix_rd.includes(day)){
+        day = day + 'rd';
+    } else if (dateSuffix_st.includes(day)) {
+        day = day + 'st';
+    } else {
+        day = day + 'th';
+    }
+
 
     // Reference to clock and date divs
     var clock = document.querySelector('#clock');
     var date = document.querySelector('#date');
+    var ampm = document.querySelector('#am-pm');
     
-
     // Set time text
     timeElement.textContent = `${hours}:${minutes}:${seconds}`;
 
     // Set date text
     dateElement.textContent = `${dayOfWeek}, ${month} ${day} ${year}`;
 
+    // Set AM PM
+    ampmElement.textContent = `${am_pm}`;
+
     // Append updated timeElement & dateElement to clock and date divs
     clock.appendChild(timeElement);
     date.appendChild(dateElement);
+    ampm.appendChild(ampmElement);
 }
 
 // Call Clock function
