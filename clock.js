@@ -31,9 +31,11 @@ var dateSuffix_rd = [3,23]
 
 // create time h1 and date h2
 var timeElement = document.createElement('h1');
+timeElement.id = 'clock';
 var dateElement = document.createElement('h2');
+dateElement.id = 'date';
 var ampmElement = document.createElement('h1');
-
+ampmElement.id = 'am-pm';
 // Want: DayOfWeek, Month Day Year
 
 // Start the clock
@@ -91,9 +93,9 @@ function updateClock(){
 
 
     // Reference to clock and date divs
-    var clock = document.querySelector('#clock');
-    var date = document.querySelector('#date');
-    var ampm = document.querySelector('#am-pm');
+    var clock = document.querySelector('#clock-container');
+    var date = document.querySelector('#date-container');
+    var ampm = document.querySelector('#am-pm-container');
     
     // Set time text
     timeElement.textContent = `${hours}:${minutes}:${seconds}`;

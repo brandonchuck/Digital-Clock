@@ -1,0 +1,26 @@
+#clock-container {
+  width: 100%;
+  background-color: aqua;
+}
+
+#clock {
+  text-align: center;
+  width: inherit;
+}
+
+#date-container {
+  width: 100%;
+}
+
+#date {
+  width: inherit;
+}
+
+.container {
+  text-align: center;
+  background-color: blue;
+}
+
+#title {
+  color: blueviolet;
+}
