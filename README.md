@@ -1,4 +1,4 @@
-# Project-2-DigitalClockApp
+# Digital Clock Application
 
 # Overview
 - Simple Digital Clock built entirely with HTML, CSS, and Javascript.
