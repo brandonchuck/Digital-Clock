@@ -1,8 +1,8 @@
 body {
   background-color: rgb(46, 46, 46);
   text-align: center;
-  font-family: monospace;
   width: 100%;
+  font-family: monospace;
 }
 
 .container {
@@ -16,14 +16,16 @@ body {
   margin-bottom: 20px;
 }
 
-#clock {
+#clock-container {
   color: rgb(88, 88, 88);
   text-align: center;
   font-size: 75pt;
-  margin-bottom: 50px;
+  font-weight: 550;
+  margin: 75px;
 }
 
-#date {
-  font-size: 38pt;
+#date-container {
+  font-size: 40pt;
+  font-weight: bold;
   color: rgb(133, 133, 133);
 }
