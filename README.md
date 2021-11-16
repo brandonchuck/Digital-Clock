@@ -2,7 +2,7 @@
 
 # Overview
 - Simple Digital Clock built entirely with HTML, CSS, and Javascript.
-- Webpage displays the current 24-hour time and date written in "DayOfWeek, Month Day Year format".
+- Webpage displays the current 12-hour time and date written in "DayOfWeek, Month Day Year format".
 
 # Website
 - Here's a link to the website hosted via Github Pages! https://brandonchuck.github.io/Project-2-DigitalClockApp/
