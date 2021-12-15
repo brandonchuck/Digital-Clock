@@ -5,7 +5,7 @@
 - Webpage displays the current 12-hour time and date written in "DayOfWeek, Month Day Year format".
 
 # Website
-- See it [here](https://brandonchuck.github.io/Project-2-DigitalClockApp/) on Github Pages!
+- See it [here](https://brandonchuck.github.io/Digital-Clock/) on Github Pages!
 
 # Preview
 
