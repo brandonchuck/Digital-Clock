@@ -20,4 +20,4 @@ My second web project with the addition of some Javascript this time around. Thi
   - Logic for appending suffix to day of the month, eg. 1st, 2nd, 3rd, 4th
 
 # Author
-Brandon Chuck | Full-Stack Developer | [LinkedIn](https://www.linkedin.com/in/brandonchuck/)
+Brandon Chuck | Full-Stack Developer | [LinkedIn](https://www.linkedin.com/in/brandonchuck/) | [Personal Website](https://www.brandonchuck-dev.com)
